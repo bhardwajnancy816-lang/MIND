@@ -1,0 +1,19 @@
+/* MindOrbit Custom Core Stylesheet */
+:root {
+  --bg-dark: #07070a;
+  --card-dark: #0f0f15;
+  --neon-blue: #6366f1;
+  --success-green: #10B981;
+  --text-white: #f5f6fa;
+  
+  --bg-light: #f6f8fc;
+  --card-light: #ffffff;
+  --accent-light: #4f46e5;
+  --text-light: #0d0f14;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}

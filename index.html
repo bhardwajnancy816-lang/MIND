@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindOrbit AI Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            indigo: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1', // Royal Indigo
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#1e1b4b',
+            },
+            purple: {
+              50: '#faf5ff',
+              100: '#f3e8ff',
+              200: '#e9d5ff',
+              300: '#d8b4fe',
+              400: '#c084fc',
+              500: '#a855f7', // Amethyst Violet
+              600: '#9333ea',
+              700: '#7e22ce',
+              800: '#6b21a8',
+              900: '#581c87',
+              950: '#3b0764',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07070a;
+      --card-dark: #0f0f15;
+      --neon-blue: #6366f1;
+      --success-green: #10B981;
+      --text-white: #f5f6fa;
+      
+      --bg-light: #f6f8fc;
+      --card-light: #ffffff;
+      --accent-light: #4f46e5;
+      --text-light: #0d0f14;
+    }
+    
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* Theme Styles */
+    body.dark { background-color: var(--bg-dark); color: var(--text-white); }
+    body.light { background-color: var(--bg-light); color: var(--text-light); }
+
+    .card-premium {
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .dark .card-premium { 
+      background-color: var(--card-dark); 
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      box-shadow: 0 10px 40px -10px rgba(0,0,0,0.4);
+    }
+    .light .card-premium { 
+      background-color: var(--card-light); 
+      border: 1px solid rgba(28, 25, 23, 0.04); 
+      box-shadow: 0 12px 36px -6px rgba(28, 25, 23, 0.03);
+    }
+
+    .card-premium:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -8px rgba(99, 102, 241, 0.12);
+    }
+
+    .animate-orbit {
+      animation: orbit 25s linear infinite;
+    }
+    
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .85; transform: scale(1.015); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    .dark ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 20px; }
+    .light ::-webkit-scrollbar-thumb { background: #E7E5E4; border-radius: 20px; }
+
+    /* Glassmorphism effects */
+    .glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    
+    .dark .glass { background: rgba(22, 22, 25, 0.8); border: 1px solid rgba(255, 255, 255, 0.02); }
+    .light .glass { background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(28, 25, 23, 0.04); }
+
+    /* Bubble Animations */
+    .message-bubble {
+      transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .message-bubble:active {
+      transform: scale(0.99);
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="dark overflow-x-hidden">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

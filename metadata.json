@@ -1,0 +1,11 @@
+{
+  "name": "MindOrbit AI Assistant",
+  "description": "An intelligent space for students to orbit around their goals, manage notes, and clarify doubts with AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
